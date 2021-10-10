@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX JSON LOAD</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            margin: 20px;
+            background-color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .product.highlight{
+            border: 1px solid green;
+            box-shadow: 0 0 21px green;
+        }
+
+        .product .inner-ct {
+
+            padding: 20px;
+            background-color: #f6f9fb;
+        }
+
+        .product .pimage {
+            /*! background-image: linear-gradient(aliceblue, #7b98b3); */
+            width: 192px;
+            height: 192px;
+            margin-bottom: 20px;
+            /*! color: aliceblue; */
+            text-align: center;
+            vertical-align: middle;
+            display: flex;
+            font-size: 36px;
+            overflow: hidden;
+            border: 1px solid #f2ebeb;
+            border-radius: 3px;
+            background-color: white;
+        }
+        .product .pimage img{
+            width: 192px;
+            height: 192px;
+        }
+
+        .product .pfooter {
+
+            padding: 20px;
+            background-color: #d1e4f4;
+        }
+
+        .product .pname {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .product .price {
+            color: #930000;
+        }
+
+        .product .cartlink {
+            color: white;
+            text-decoration: none;
+            background-color: #237ccc;
+            display: inline-block;
+            border-radius: 3px;
+            padding: 10px;
+        }
+
+        .product .dellink {
+            color: white;
+            text-decoration: none;
+            background-color: #c42f2f;
+            float: right;
+            border-radius: 3px;
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        .product .editlink {
+            color: white;
+            text-decoration: none;
+            background-color: #237ccc;
+            float: right;
+            border-radius: 3px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .cpanel {
+            background-color: cornflowerblue;
+            padding: 10px;
+            border-radius: 3px;
+            display: flex;
+            flex-wrap: wrap;
+            min-width: 817px;
+        }
+
+        .cpanel button {
+
+            background-color: #365284;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .cpanel button:hover{
+            background-color: #456fb6;
+        }
+
+        .cpanel input[type=text] {
+
+            padding: 10px;
+            border-radius: 3px;
+            border: 0px;
+            margin-right: 10px;
+        }
+
+        .vlsep {
+            border-right: 1px solid #98beff;
+            border-left: 1px solid #3e5f99;
+            display: inline-flex;
+            margin: 0 10px;
+            height: 36px;
+            content: 'a';
+            line-height: 29px;
+        }
+        .product a{
+            cursor: pointer;
+        }
+
+        .product a:hover{
+            box-shadow: 0 0 6px -1px #204075;
+        }
+
+        .product a:active{
+            border: 1px solid #102b57;
+            padding: 9px;
+        }
+
+        .cpanel #filter{
+            margin-left: -13px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            padding: 10px
+        }
+    
+    </style>
+</head>
+
+<body>
+
+    <div class="cpanel">
+
+        <button id="termekek-betolt">Betolt</button>
+        <span class="vlsep"></span>
+        <input type="text" name="name" id="name" placeholder="Termék megnevezése">
+        <input type="text" name="ar" id="ar" placeholder="Termék ára">
+        <button id="newproduct">Mentés</button>
+
+        <span class="vlsep"></span>
+        
+        <input type="text" name="filterar" id="filterar" placeholder="Min. ár">
+        <button id="filter">&#128270;</button>
+
+        <span class="vlsep"></span>
+        <button id="cart">&#128722;<span>0</span></button>
+        
+    </div>
+
+    <div class="container" id="termekek">
+
+    </div>
+
+    <script src="ajax.js"></script>
+
+</body>
+
+</html>
