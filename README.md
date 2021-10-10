@@ -17,4 +17,4 @@ Telepítési útmutató
 - hozzáadhatunk új termékeket az adatbázishoz
 - törölhetünk termékeket az adatbázisból
 - meglévő termékeket is szerkeszthetünk és menthetünk
-- termékeket rakhatunk a kosarunkba, és törölhetünk belőle
+- termékeket rakhatunk a kosarunkba (aminek megnézhetjük a tartalmát), és törölhetünk belőle 
